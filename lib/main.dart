@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
     startSplashScreen();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 3),
     );
     animationController!.addListener(() {
       setState(() {});
