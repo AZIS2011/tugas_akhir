@@ -20,7 +20,7 @@ class _Halaman_LoginState extends State<Halaman_Login> {
     return Theme(
       data: ThemeData(fontFamily: "Montserrat"),
       child: Scaffold(
-        backgroundColor: Colors.black26,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(

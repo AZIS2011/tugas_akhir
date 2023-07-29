@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavBarPage(),
+      home: SplashScreen(),
     );
   }
 }
@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: Image.asset(
                 "assets/images/radja_coffe.png",
                 width: mediaQueryWidth * 0.7,
-                height: mediaQueryHeight * 0.7,
+                height: mediaQueryHeight * 0.75,
               ),
             ),
           ],

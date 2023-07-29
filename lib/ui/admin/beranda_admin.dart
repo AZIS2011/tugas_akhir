@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:radja_coffe/ui/admin/edit_stok.dart';
 
 import 'info_laporan.dart';
 import 'info_rekap_pembayaran.dart';
@@ -77,10 +78,10 @@ class _Beranda_AdminState extends State<Beranda_Admin> {
                   ),
                   ListTile(
                     onTap: (() {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => Info_Kasir()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditStok()));
                     }),
                     title: Text(
                       "EDIT PESANAN",

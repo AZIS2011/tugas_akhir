@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -51,17 +52,44 @@ class _Detail_PesananState extends State<Detail_Pesanan> {
       data: ThemeData(fontFamily: "Montserrat"),
       child: Scaffold(
         appBar: AppBar(
+          title: Text("Detail Pesanan", style: TextStyle(fontSize: 16),),
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back, color: Colors.black),
+            icon: Icon(Icons.arrow_back, color: Colors.yellow),
           ),
         ),
         body: Column(
           children: [
             SizedBox(
               height: 50,
+            ),
+            Container(
+              child: CarouselSlider(
+                items: image.map((e) {
+                  return Builder(builder: (BuildContext context) {
+                    return Container(
+                      // child: Image.asset(
+                       
+                      //   width: MediaQuery.of(context).size.width,
+                      //   height: 200,
+                      // ),
+                    );
+                  });
+                }).toList(),
+                options: CarouselOptions(
+                    height: 280,
+                    initialPage: 0,
+                    autoPlay: true,
+                    autoPlayAnimationDuration: Duration(milliseconds: 300),
+                    viewportFraction: 1,
+                    onPageChanged: (index, _) {
+                      setState(() {
+                        current = index;
+                      });
+                    }),
+              ),
             ),
             Column(
               children: [
@@ -126,7 +154,7 @@ class _Detail_PesananState extends State<Detail_Pesanan> {
                       ],
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 200,
                     ),
                     SizedBox(height: 52),
                     Row(

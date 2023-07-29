@@ -15,6 +15,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
   bool _value1 = false;
   bool _value2 = false;
   bool _value3 = false;
+   bool isHiddenPassword = true;
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -82,8 +83,14 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                 ),
                 Container(
                   child: TextFormField(
+                      obscureText: isHiddenPassword,
                     decoration: InputDecoration(
+                       suffixIcon: InkWell(
+                            onTap: _togglePasswordView,
+                            child: Icon(Icons.visibility),
+                          ),
                       border: OutlineInputBorder(
+                        
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       ),
                       hintText: 'Masukan Password',
@@ -127,9 +134,9 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                           Checkbox(
                             value: _value2,
                             onChanged: (value) {
-                              setState(() {
-                                _value2 = value!;
-                              });
+                              // setState(() {
+                              //   _value2 = value!;
+                              // });
                             },
                           ),
                           Text("Chef",
@@ -182,5 +189,10 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
         ),
       ),
     );
+  }
+   void _togglePasswordView() {
+    setState(() {
+      isHiddenPassword = !isHiddenPassword;
+    });
   }
 }

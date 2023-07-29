@@ -67,55 +67,34 @@ class _PembayaranState extends State<Pembayaran> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "PEMBAYARAN",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: ((context) => PilihanMeja()),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            height: 40,
-                            color: Colors.black,
-                            width: 70,
-                            child: Center(
-                              child: Text(
-                                "01",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+              margin: EdgeInsets.all(40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "PEMBAYARAN",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => PilihanMeja()),
                             ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
+                          );
+                        },
+                        child: Container(
                           height: 40,
                           color: Colors.black,
                           width: 70,
                           child: Center(
                             child: Text(
-                              "02",
+                              "01",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
@@ -124,523 +103,541 @@ class _PembayaranState extends State<Pembayaran> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "03",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "02",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "04",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "03",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "05",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "04",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "06",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "05",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "07",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "06",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "08",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "07",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "09",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "08",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "10",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "09",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "11",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "10",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "12",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "11",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "13",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "12",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "14",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "13",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "15",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "14",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "16",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "15",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "17",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "16",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "18",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "17",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "19",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "18",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "20",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "19",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "21",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "20",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "22",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "21",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "23",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "22",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "24",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "23",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "25",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "24",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "26",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "25",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "27",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "26",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 40,
-                          color: Colors.black,
-                          width: 70,
-                          child: Center(
-                            child: Text(
-                              "28",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "27",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                        width: 70,
+                        child: Center(
+                          child: Text(
+                            "28",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),

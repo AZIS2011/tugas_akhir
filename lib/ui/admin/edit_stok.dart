@@ -12,6 +12,72 @@ class EditStok extends StatefulWidget {
 class _EditStokState extends State<EditStok> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Edit Stok"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          SizedBox(
+            height: 20,
+          ),
+          ListTile(
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {},
+            ),
+            title: Image.asset(
+              "assets/images/mie_aceh_tumis.png",
+              width: 200,
+              height: 200,
+            ),
+          ),
+          Divider(),
+          ListTile(
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {},
+            ),
+           title: Image.asset(
+              "assets/images/mie_aceh_tumis.png",
+              width: 200,
+              height: 200,
+            ),
+          ),
+          Divider(),
+          ListTile(
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {},
+            ),
+            title: Image.asset(
+              "assets/images/mie_aceh_tumis.png",
+              width: 200,
+              height: 200,
+            ),
+          ),
+          Divider(),
+          ListTile(
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {},
+            ),
+           title: Image.asset(
+              "assets/images/mie_aceh_tumis.png",
+              width: 200,
+              height: 200,
+            ),
+          ),
+          Divider(),
+          ListTile(
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {},
+            ),
+            title: Text('TEST 1'),
+          )
+        ]),
+      ),
+    );
   }
 }

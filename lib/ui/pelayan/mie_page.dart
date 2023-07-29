@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:radja_coffe/ui/pelayan/detail_pesanan.dart';
 
 class MiePage extends StatefulWidget {
   const MiePage({Key? key}) : super(key: key);
@@ -56,86 +57,94 @@ class _MiePageState extends State<MiePage> {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                       ),
-                      child: Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Positioned(
-                            left: 5,
-                            child: Center(
-                              child: Image.asset(acehList[index]["image"]),
-                            ),
-                          ),
-                          Positioned(
-                            top: 10,
-                            right: 40,
-                            child: Text(acehList[index]["judul"],
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                          ),
-                          Positioned(
-                            bottom: 20,
-                            right: 20,
-                            child: Text(
-                              NumberFormat.currency(
-                                locale: 'id',
-                                symbol: 'Rp.',
-                                decimalDigits: 0,
-                              ).format(acehList[index]["harga"]),
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Detail_Pesanan()));
+                        },
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Positioned(
+                              left: 5,
+                              child: Center(
+                                child: Image.asset(acehList[index]["image"]),
                               ),
                             ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 10,
-                            child: Icon(
-                              Icons.star,
-                              color: Color(0xffFFBC58),
-                              size: 14,
+                            Positioned(
+                              top: 10,
+                              right: 40,
+                              child: Text(acehList[index]["judul"],
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  )),
                             ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 20,
-                            child: Icon(
-                              Icons.star,
-                              color: Color(0xffFFBC58),
-                              size: 14,
+                            // Positioned(
+                            //   bottom: 20,
+                            //   right: 20,
+                            //   child: Text(
+                            //     NumberFormat.currency(
+                            //       locale: 'id',
+                            //       symbol: 'Rp.',
+                            //       decimalDigits: 0,
+                            //     ).format(acehList[index]["harga"]),
+                            //     style: TextStyle(
+                            //       color: Colors.black,
+                            //       fontSize: 12,
+                            //       fontWeight: FontWeight.bold,
+                            //     ),
+                            //   ),
+                            // ),
+                            Positioned(
+                              bottom: 5,
+                              right: 10,
+                              child: Icon(
+                                Icons.star,
+                                color: Color(0xffFFBC58),
+                                size: 14,
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 30,
-                            child: Icon(
-                              Icons.star,
-                              color: Color(0xffFFBC58),
-                              size: 14,
+                            Positioned(
+                              bottom: 5,
+                              right: 20,
+                              child: Icon(
+                                Icons.star,
+                                color: Color(0xffFFBC58),
+                                size: 14,
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 40,
-                            child: Icon(
-                              Icons.star,
-                              color: Color(0xffFFBC58),
-                              size: 14,
+                            Positioned(
+                              bottom: 5,
+                              right: 30,
+                              child: Icon(
+                                Icons.star,
+                                color: Color(0xffFFBC58),
+                                size: 14,
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 50,
-                            child: Icon(
-                              Icons.star,
-                              color: Color(0xffFFBC58),
-                              size: 14,
+                            Positioned(
+                              bottom: 5,
+                              right: 40,
+                              child: Icon(
+                                Icons.star,
+                                color: Color(0xffFFBC58),
+                                size: 14,
+                              ),
                             ),
-                          ),
-                        ],
+                            Positioned(
+                              bottom: 5,
+                              right: 50,
+                              child: Icon(
+                                Icons.star,
+                                color: Color(0xffFFBC58),
+                                size: 14,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   }),

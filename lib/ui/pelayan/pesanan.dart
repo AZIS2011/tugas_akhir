@@ -17,6 +17,7 @@ class _PesananState extends State<Pesanan> {
         data: ThemeData(fontFamily: "Montserrat"),
         child: Scaffold(
           appBar: AppBar(
+            
             bottom: TabBar(
               tabs: <Widget>[
                 Tab(
@@ -45,16 +46,16 @@ class _PesananState extends State<Pesanan> {
             ),
             backgroundColor: Colors.transparent,
             elevation: 0,
-            automaticallyImplyLeading: false,
-            // title: Text(
-            //   "Pesanan",
-            //   style: TextStyle(
-            //     fontWeight: FontWeight.bold,
-            //     fontSize: 20,
-            //     color: Color(0xff141414),
-            //   ),
-            // ),
-            // centerTitle: true,
+            // automaticallyImplyLeading: true,
+            title: Text(
+              "Pesanan",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Color(0xff141414),
+              ),
+            ),
+            centerTitle: true,
           ),
         ),
       ),

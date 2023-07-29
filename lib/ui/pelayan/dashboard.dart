@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:radja_coffe/ui/pelayan/coffe_page.dart';
+import 'package:radja_coffe/ui/pelayan/laporan_pelayan.dart';
 import 'package:radja_coffe/ui/pelayan/mie_page.dart';
+import 'package:radja_coffe/ui/pelayan/pesanan.dart';
 
 import 'daftar_menu.dart';
 
@@ -94,35 +96,44 @@ class _DashboardState extends State<Dashboard> {
                             padding: const EdgeInsets.all(5.0),
                             child: Column(
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          Row(
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: 35,
+                                              width: 40,
+                                              color: Color(0xffFFD700),
+                                              child: Column(
+                                                children: [
+                                                  Icon(
+                                                    Icons.menu_book,
+                                                    size: 32,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 4,
+                                            ),
+                                            Text('Daftar Menu'),
+                                          ],
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Pesanan()));
+                                          },
+                                          child: Column(
                                             children: [
-                                              SizedBox(
-                                                width: 16,
-                                              ),
-                                              Container(
-                                                height: 35,
-                                                width: 40,
-                                                color: Color(0xffFFD700),
-                                                child: Column(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.menu_book,
-                                                      size: 32,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 42,
-                                              ),
                                               Container(
                                                 height: 35,
                                                 width: 40,
@@ -137,22 +148,41 @@ class _DashboardState extends State<Dashboard> {
                                                 ),
                                               ),
                                               SizedBox(
-                                                width: 32,
+                                                height: 4,
                                               ),
-                                              Container(
-                                                height: 35,
-                                                width: 40,
-                                                color: Color(0xffFFD700),
-                                                child: Column(
-                                                  children: [
-                                                    Image.asset(
-                                                        'assets/images/status.png'),
-                                                  ],
-                                                ),
+                                              Text('Pesanan'),
+                                            ],
+                                          ),
+                                        ),
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: 35,
+                                              width: 40,
+                                              color: Color(0xffFFD700),
+                                              child: Column(
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/images/status.png'),
+                                                ],
                                               ),
-                                              SizedBox(
-                                                width: 25,
-                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 4,
+                                            ),
+                                            Text('Status'),
+                                          ],
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Laporan_Pelayan()));
+                                          },
+                                          child: Column(
+                                            children: [
                                               Container(
                                                 height: 35,
                                                 width: 40,
@@ -164,46 +194,16 @@ class _DashboardState extends State<Dashboard> {
                                                   ],
                                                 ),
                                               ),
+                                              SizedBox(
+                                                height: 4,
+                                              ),
+                                              Text('Laporan'),
                                             ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      "Daftar Menu",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Pesanan",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Status",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Laporan",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ],
                             ),
