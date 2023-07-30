@@ -18,30 +18,37 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
     {
       "image": "assets/images/naga.png",
       "text": "Juice Naga",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/melon.png",
       "text": "Juice Melon",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/pukat.png",
       "text": "Juice Alpuka ",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/jeruk.png",
       "text": "Juice Jeruk",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/semangka.png",
       "text": "Juice Semangka",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/wortel.png",
       "text": "Juice Wortel",
+      "harga": "Rp.5000",
     },
     {
       "image": "assets/images/pir.png",
       "text": "Juice Pir",
+      "harga": "Rp.5000",
     },
   ];
   @override
@@ -58,45 +65,45 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
             //     icon: Icon(Icons.arrow_back, color: Color(0xff141414))),
             elevation: 0,
             backgroundColor: Colors.white,
-            title: Container(
-              child: TextField(
-                onTap: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => Daftar_Menu()));
-                },
-                controller: _textEditingController,
-                autofocus: false,
-                keyboardType: TextInputType.name,
-                textInputAction: TextInputAction.next,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+            // title: Container(
+            //   child: TextField(
+            //     onTap: () {
+            //       // Navigator.push(context,
+            //       //     MaterialPageRoute(builder: (context) => Daftar_Menu()));
+            //     },
+            //     controller: _textEditingController,
+            //     autofocus: false,
+            //     keyboardType: TextInputType.name,
+            //     textInputAction: TextInputAction.next,
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(20),
+            //       ),
 
-                  //enabledBorder: InputBorder.none,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: Color(0xffFFD700),
-                      width: 2,
-                    ),
-                  ),
-                  contentPadding: EdgeInsets.fromLTRB(30, 15, 30, 15),
-                  hintText: 'Cari Makanan, Minuman, Jus',
-                  hintStyle: TextStyle(
-                    fontSize: 10,
-                  ),
-                  suffixIcon: Image.asset('assets/images/pilihan.png'),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
+            //       //enabledBorder: InputBorder.none,
+            //       focusedBorder: OutlineInputBorder(
+            //         borderRadius: BorderRadius.all(
+            //           Radius.circular(20),
+            //         ),
+            //         borderSide: BorderSide(
+            //           color: Color(0xffFFD700),
+            //           width: 2,
+            //         ),
+            //       ),
+            //       contentPadding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+            //       hintText: 'Cari Makanan, Minuman, Jus',
+            //       hintStyle: TextStyle(
+            //         fontSize: 10,
+            //       ),
+            //       suffixIcon: Image.asset('assets/images/pilihan.png'),
+            //       prefixIcon: Icon(
+            //         Icons.search,
+            //         color: Colors.grey,
+            //         size: 20,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ),
           body: SafeArea(
             child: SingleChildScrollView(
@@ -122,7 +129,8 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => Detail_Pesanan()));
+                                            builder: (context) =>
+                                                Detail_Pesanan()));
                                   },
                                   child: Container(
                                     padding: EdgeInsets.only(left: 10),
@@ -146,7 +154,7 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
                                           child: Text(
                                             freshList[index]["text"],
                                             style: TextStyle(
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),
@@ -200,18 +208,18 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
                                         //     ],
                                         //   ),
                                         // ),
-                                        // Positioned(
-                                        //   right: 5,
-                                        //   bottom: 5,
-                                        //   child: Text(
-                                        //     'Rp.1.230.000',
-                                        //     style: TextStyle(
-                                        //       color: Color(0xFF163D74),
-                                        //       fontSize: 11,
-                                        //       fontWeight: FontWeight.bold,
-                                        //     ),
-                                        //   ),
-                                        // ),
+                                        Positioned(
+                                          right: 5,
+                                          bottom: 10,
+                                          child: Text(
+                                         freshList[index]["harga"],
+                                            style: TextStyle(
+                                              color: Color(0xFF163D74),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),

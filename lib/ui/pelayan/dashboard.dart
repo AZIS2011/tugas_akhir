@@ -103,26 +103,35 @@ class _DashboardState extends State<Dashboard> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Column(
-                                          children: [
-                                            Container(
-                                              height: 35,
-                                              width: 40,
-                                              color: Color(0xffFFD700),
-                                              child: Column(
-                                                children: [
-                                                  Icon(
-                                                    Icons.menu_book,
-                                                    size: 32,
-                                                  ),
-                                                ],
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Daftar_Menu()));
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                height: 35,
+                                                width: 40,
+                                                color: Color(0xffFFD700),
+                                                child: Column(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.menu_book,
+                                                      size: 32,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 4,
-                                            ),
-                                            Text('Daftar Menu'),
-                                          ],
+                                              SizedBox(
+                                                height: 4,
+                                              ),
+                                              Text('Daftar Menu'),
+                                            ],
+                                          ),
                                         ),
                                         GestureDetector(
                                           onTap: () {

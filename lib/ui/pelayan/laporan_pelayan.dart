@@ -12,6 +12,8 @@ class _Laporan_PelayanState extends State<Laporan_Pelayan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color(0xffFFD700),
         title: Text('Laporan'),
       ),
       floatingActionButton: IconButton(

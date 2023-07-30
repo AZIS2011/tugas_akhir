@@ -52,7 +52,8 @@ class _Detail_PesananState extends State<Detail_Pesanan> {
       data: ThemeData(fontFamily: "Montserrat"),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Detail Pesanan", style: TextStyle(fontSize: 16),),
+           backgroundColor: Color(0xffFFD700),
+          title: Text("Detail Pesanan", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);

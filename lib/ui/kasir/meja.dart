@@ -137,35 +137,48 @@ class _PilihanMejaState extends State<PilihanMeja> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 500,
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(80, 10, 80, 10),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: MaterialButton(
-                  onPressed: () {
-                    var alert = AlertDialogShow();
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return alert;
-                        });
-                  },
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  color: Color(0xffFFD700),
-                  elevation: 0,
-                  child: Text(
-                    "KONFIRMASI",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+            Row(
+              children: [
+                Row(
+                  children: [
+                    Text("Total"),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text("Rp.20.000"),
+                  ],
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: MaterialButton(
+                        onPressed: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => CheckOut(dataKeranjang)));
+                        },
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        color: Color(0xffFFD700),
+                        elevation: 0,
+                        child: Text(
+                          'KONFIRMASI',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
