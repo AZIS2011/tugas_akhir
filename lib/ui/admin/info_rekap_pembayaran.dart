@@ -39,9 +39,17 @@ class _InfoRekapPembayaranState extends State<InfoRekapPembayaran> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            backgroundColor: Colors.transparent,
+             backgroundColor: Color(0xffFFD700),
             elevation: 0,
-            automaticallyImplyLeading: false,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back,
+              ),
+              color: Colors.black,
+            ),
             title: Text(
               "REKAP PEMBAYARAN",
               style: TextStyle(

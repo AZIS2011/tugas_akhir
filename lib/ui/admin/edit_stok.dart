@@ -12,71 +12,79 @@ class EditStok extends StatefulWidget {
 class _EditStokState extends State<EditStok> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Edit Stok"),
-      ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          SizedBox(
-            height: 20,
+    return Theme(
+      data: ThemeData(fontFamily: "Montserrat"),
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Color(0xffFFD700),
+          title: Text(
+            "Edit Stok",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          ListTile(
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {},
+        ),
+        body: SingleChildScrollView(
+          child: Column(children: [
+            SizedBox(
+              height: 20,
             ),
-            title: Image.asset(
-              "assets/images/mie_aceh_tumis.png",
-              width: 200,
-              height: 200,
+            ListTile(
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {},
+              ),
+              title: Image.asset(
+                "assets/images/mie_aceh_tumis.png",
+                width: 200,
+                height: 200,
+              ),
             ),
-          ),
-          Divider(),
-          ListTile(
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {},
+            Divider(),
+            ListTile(
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {},
+              ),
+              title: Image.asset(
+                "assets/images/mie_aceh_tumis.png",
+                width: 200,
+                height: 200,
+              ),
             ),
-           title: Image.asset(
-              "assets/images/mie_aceh_tumis.png",
-              width: 200,
-              height: 200,
+            Divider(),
+            ListTile(
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {},
+              ),
+              title: Image.asset(
+                "assets/images/mie_aceh_tumis.png",
+                width: 200,
+                height: 200,
+              ),
             ),
-          ),
-          Divider(),
-          ListTile(
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {},
+            Divider(),
+            ListTile(
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {},
+              ),
+              title: Image.asset(
+                "assets/images/mie_aceh_tumis.png",
+                width: 200,
+                height: 200,
+              ),
             ),
-            title: Image.asset(
-              "assets/images/mie_aceh_tumis.png",
-              width: 200,
-              height: 200,
-            ),
-          ),
-          Divider(),
-          ListTile(
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {},
-            ),
-           title: Image.asset(
-              "assets/images/mie_aceh_tumis.png",
-              width: 200,
-              height: 200,
-            ),
-          ),
-          Divider(),
-          ListTile(
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {},
-            ),
-            title: Text('TEST 1'),
-          )
-        ]),
+            Divider(),
+            ListTile(
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {},
+              ),
+              title: Text('TEST 1'),
+            )
+          ]),
+        ),
       ),
     );
   }

@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:radja_coffe/services/auth_services.dart';
 import 'package:radja_coffe/ui/admin/beranda_admin.dart';
+import 'package:http/http.dart' as http;
+
+import '../../services/globals.dart';
 
 class Login_Admin extends StatefulWidget {
   const Login_Admin({Key? key}) : super(key: key);
@@ -16,6 +22,28 @@ class _Login_AdminState extends State<Login_Admin> {
   final TextEditingController email = new TextEditingController();
   final TextEditingController password = new TextEditingController();
   bool isHiddenPassword = true;
+   String _name = '';
+  String _email = '';
+  String _password = '';
+
+  loginPressed() async {
+    if (_name.isNotEmpty && _password.isNotEmpty) {
+      http.Response response = await AuthServices.login(_name, _password);
+      Map responseMap = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const Beranda_Admin(),
+            ));
+      } else {
+        errorSnackBar(context, responseMap.values.first);
+      }
+    } else {
+      errorSnackBar(context, 'enter all required fields');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -56,24 +84,27 @@ class _Login_AdminState extends State<Login_Admin> {
                     ),
                     Container(
                       child: TextFormField(
+                        onChanged: (value) {
+                          _name = value;
+                        },
                         autofocus: false,
-                        controller: email,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return ("Please Enter Your Email");
-                          }
+                        // controller: email,
+                        keyboardType: TextInputType.text,
+                        // validator: (value) {
+                        //   if (value!.isEmpty) {
+                        //     return ("Please Enter Your Email");
+                        //   }
 
-                          //req expression for email  validation
-                          if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                              .hasMatch(value)) {
-                            return ("Please Enter a valid email");
-                          }
-                          return null;
-                        },
-                        onSaved: (value) {
-                          email.text = value!;
-                        },
+                        //   //req expression for email  validation
+                        //   if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                        //       .hasMatch(value)) {
+                        //     return ("Please Enter a valid email");
+                        //   }
+                        //   return null;
+                        // },
+                        // onSaved: (value) {
+                        //   email.text = value!;
+                        // },
                         textInputAction: TextInputAction.next,
                         style: TextStyle(
                           fontSize: 16,
@@ -96,10 +127,13 @@ class _Login_AdminState extends State<Login_Admin> {
                     ),
                     Container(
                       child: TextFormField(
+                        onChanged: (value) {
+                          _password = value;
+                        },
                         autofocus: false,
                         controller: password,
                         obscureText: isHiddenPassword,
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.text,
                         validator: (value) {
                           RegExp regex = new RegExp(r'^.{6,}$'); //b
                           if (value!.isEmpty) {
@@ -144,7 +178,7 @@ class _Login_AdminState extends State<Login_Admin> {
                             child: MaterialButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
+                                    context,  
                                     MaterialPageRoute(
                                         builder: (context) => Beranda_Admin()));
                               },

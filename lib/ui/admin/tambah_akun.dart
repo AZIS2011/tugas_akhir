@@ -1,6 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart' as http;
+import 'package:radja_coffe/ui/login/login_admin.dart';
+
+import '../../services/auth_services.dart';
+import '../../services/globals.dart';
 
 class Tambah_Akun extends StatefulWidget {
   const Tambah_Akun({Key? key}) : super(key: key);
@@ -10,12 +17,36 @@ class Tambah_Akun extends StatefulWidget {
 }
 
 class _Tambah_AkunState extends State<Tambah_Akun> {
+  String _email = '';
+  String _password = '';
+  String _name = '';
   int _value = 1;
+  createAccountPressed() async {
+    bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(_email);
+    if (emailValid) {
+      http.Response response =
+          await AuthServices.register(_name, _email, _password);
+      Map responseMap = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const Login_Admin(),
+            ));
+      } else {
+        errorSnackBar(context, responseMap.values.first[0]);
+      }
+    } else {
+      errorSnackBar(context, 'email not valid');
+    }
+  }
 
   bool _value1 = false;
   bool _value2 = false;
   bool _value3 = false;
-   bool isHiddenPassword = true;
+  bool isHiddenPassword = true;
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -23,7 +54,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.transparent,
+           backgroundColor: Color(0xffFFD700),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Color(0xff141414)),
             onPressed: () {
@@ -57,6 +88,9 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                 ),
                 Container(
                   child: TextFormField(
+                    onChanged: (value) {
+                      _name = value;
+                    },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -83,14 +117,16 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                 ),
                 Container(
                   child: TextFormField(
-                      obscureText: isHiddenPassword,
+                    onChanged: (value) {
+                      _password = value;
+                    },
+                    obscureText: isHiddenPassword,
                     decoration: InputDecoration(
-                       suffixIcon: InkWell(
-                            onTap: _togglePasswordView,
-                            child: Icon(Icons.visibility),
-                          ),
+                      suffixIcon: InkWell(
+                        onTap: _togglePasswordView,
+                        child: Icon(Icons.visibility),
+                      ),
                       border: OutlineInputBorder(
-                        
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       ),
                       hintText: 'Masukan Password',
@@ -110,44 +146,63 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Container(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: _value1,
-                            onChanged: (value) {
-                              setState(() {
-                                _value1 = value!;
-                              });
-                            },
-                          ),
-                          Text("Kasir",
-                              style: TextStyle(
-                                fontSize: 12,
-                              )),
-                        ],
+                  child: TextFormField(
+                    onChanged: (value) {
+                      _email = value;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: _value2,
-                            onChanged: (value) {
-                              // setState(() {
-                              //   _value2 = value!;
-                              // });
-                            },
-                          ),
-                          Text("Chef",
-                              style: TextStyle(
-                                fontSize: 12,
-                              )),
-                        ],
+                      hintText: 'Masukan Rules',
+                      hintStyle: TextStyle(
+                        fontSize: 12,
                       ),
-                    ],
+                    ),
                   ),
                 ),
+                // Container(
+                //   child: Column(
+                //     children: [
+                //       Row(
+                //         children: [
+                //           Checkbox(
+                //             value: _value1,
+                //             onChanged: (value) {
+                //               setState(() {
+                //                 _value1 = value!;
+                //               });
+                //             },
+                //           ),
+                //           Text("Kasir",
+                //               style: TextStyle(
+                //                 fontSize: 12,
+                //               )),
+                //         ],
+                //       ),
+                //       Row(
+                //         children: [
+                //           Checkbox(
+                //             value: _value2,
+                //             onChanged: (value) {
+                //               // setState(() {
+                //               //   _value2 = value!;
+                //               // });
+                //             },
+                //           ),
+                //           Text("Chef",
+                //               style: TextStyle(
+                //                 fontSize: 12,
+                //               )),
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 SizedBox(
                   height: 40,
                 ),
@@ -163,7 +218,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                               // Navigator.push(
                               //     context,
                               //     MaterialPageRoute(
-                              //         builder: (context) => ReviewPesanan()));
+                              //         builder: (context) => createAccountPressed()));
                             },
                             padding: EdgeInsets.symmetric(vertical: 15),
                             color: Color(0xffFFD700),
@@ -190,7 +245,8 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
       ),
     );
   }
-   void _togglePasswordView() {
+
+  void _togglePasswordView() {
     setState(() {
       isHiddenPassword = !isHiddenPassword;
     });
