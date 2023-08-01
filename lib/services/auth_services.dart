@@ -2,7 +2,8 @@ import 'dart:convert';
 
 
 import 'package:http/http.dart' as http;
-import 'package:radja_coffe/services/globals.dart';
+
+import 'globals.dart';
 
 class AuthServices {
   static Future<http.Response> register(
@@ -23,9 +24,9 @@ class AuthServices {
     return response;
   }
 
-  static Future<http.Response> login(String name, String password) async {
+  static Future<http.Response> login(String email, String password) async {
     Map data = {
-      "name": name,
+      "email": email,
       "password": password,
     };
     var body = json.encode(data);

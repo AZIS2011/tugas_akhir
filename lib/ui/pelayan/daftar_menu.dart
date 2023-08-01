@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'detail_pesanan.dart';
 
 class Daftar_Menu extends StatefulWidget {
@@ -57,7 +56,13 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
       child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text("Daftar Menu", style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold, color: Colors.black),),
+            title: Text(
+              "Daftar Menu",
+              style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
             centerTitle: true,
             // leading: IconButton(
             //     onPressed: () {
@@ -213,7 +218,7 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
                                           right: 5,
                                           bottom: 10,
                                           child: Text(
-                                         freshList[index]["harga"],
+                                            freshList[index]["harga"],
                                             style: TextStyle(
                                               color: Color(0xFF163D74),
                                               fontSize: 14,

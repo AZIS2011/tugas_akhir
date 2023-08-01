@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
+import 'package:radja_coffe/Screens/login_screen.dart';
 import 'package:radja_coffe/ui/login/login_admin.dart';
 
+import '../../Screens/rounded_button.dart';
 import '../../services/auth_services.dart';
 import '../../services/globals.dart';
+import '../login/login.dart';
 
 class Tambah_Akun extends StatefulWidget {
   const Tambah_Akun({Key? key}) : super(key: key);
@@ -33,7 +36,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => const Login_Admin(),
+              builder: (BuildContext context) => const Tambah_Akun(),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first[0]);
@@ -140,7 +143,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                   height: 15,
                 ),
                 Text(
-                  'Rules',
+                  'Email',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -158,7 +161,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       ),
-                      hintText: 'Masukan Rules',
+                      hintText: 'Masukan Email',
                       hintStyle: TextStyle(
                         fontSize: 12,
                       ),
@@ -206,38 +209,63 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
                 SizedBox(
                   height: 40,
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.fromLTRB(70, 0, 70, 0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: MaterialButton(
-                            onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => createAccountPressed()));
-                            },
-                            padding: EdgeInsets.symmetric(vertical: 15),
-                            color: Color(0xffFFD700),
-                            elevation: 0,
-                            child: Text(
-                              "SUBMIT",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color(0xffFFFFFF),
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
+                RoundedButton(
+                  btnText: 'Create Account',
+                  onBtnPressed: () => createAccountPressed(),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const Halaman_Login(),
+                          ));
+                    },
+                    child: const Text(
+                      'already have an account',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                )
+                // Row(
+                //   children: [
+                //     Expanded(
+                //       child: Container(
+                //         margin: EdgeInsets.fromLTRB(70, 0, 70, 0),
+                //         child: ClipRRect(
+                //           borderRadius: BorderRadius.circular(15),
+                //           child: MaterialButton(
+                //             onPressed: () {
+                //               // Navigator.push(
+                //               //     context,
+                //               //     MaterialPageRoute(
+                //               //         builder: (context) => createAccountPressed()));
+                //             },
+                //             padding: EdgeInsets.symmetric(vertical: 15),
+                //             color: Color(0xffFFD700),
+                //             elevation: 0,
+                //             child: Text(
+                //               "SUBMIT",
+                //               textAlign: TextAlign.center,
+                //               style: TextStyle(
+                //                 color: Color(0xffFFFFFF),
+                //                 fontSize: 16,
+                //                 fontWeight: FontWeight.bold,
+                //               ),
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),

@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:radja_coffe/services/auth_services.dart';
 import 'package:radja_coffe/ui/admin/beranda_admin.dart';
 import 'package:http/http.dart' as http;
 
+import '../../Screens/rounded_button.dart';
 import '../../services/globals.dart';
 
 class Login_Admin extends StatefulWidget {
@@ -22,13 +22,13 @@ class _Login_AdminState extends State<Login_Admin> {
   final TextEditingController email = new TextEditingController();
   final TextEditingController password = new TextEditingController();
   bool isHiddenPassword = true;
-   String _name = '';
+
   String _email = '';
   String _password = '';
 
   loginPressed() async {
-    if (_name.isNotEmpty && _password.isNotEmpty) {
-      http.Response response = await AuthServices.login(_name, _password);
+    if (_email.isNotEmpty && _password.isNotEmpty) {
+      http.Response response = await AuthServices.login(_email, _password);
       Map responseMap = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Navigator.push(
@@ -85,26 +85,10 @@ class _Login_AdminState extends State<Login_Admin> {
                     Container(
                       child: TextFormField(
                         onChanged: (value) {
-                          _name = value;
+                          _email = value;
                         },
                         autofocus: false,
-                        // controller: email,
-                        keyboardType: TextInputType.text,
-                        // validator: (value) {
-                        //   if (value!.isEmpty) {
-                        //     return ("Please Enter Your Email");
-                        //   }
-
-                        //   //req expression for email  validation
-                        //   if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                        //       .hasMatch(value)) {
-                        //     return ("Please Enter a valid email");
-                        //   }
-                        //   return null;
-                        // },
-                        // onSaved: (value) {
-                        //   email.text = value!;
-                        // },
+                        keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         style: TextStyle(
                           fontSize: 16,
@@ -114,11 +98,11 @@ class _Login_AdminState extends State<Login_Admin> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(8.0)),
                           ),
-                          labelText: "Username",
+                          labelText: "Email",
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: Icon(Icons.email),
                         ),
                       ),
                     ),
@@ -134,18 +118,7 @@ class _Login_AdminState extends State<Login_Admin> {
                         controller: password,
                         obscureText: isHiddenPassword,
                         keyboardType: TextInputType.text,
-                        validator: (value) {
-                          RegExp regex = new RegExp(r'^.{6,}$'); //b
-                          if (value!.isEmpty) {
-                            return ("Password is required for login");
-                          }
-                          if (!regex.hasMatch(value)) {
-                            return ("Enter Valid Password (Min.6Character)");
-                          }
-                        },
-                        onSaved: (value) {
-                          password.text = value!;
-                        },
+                      
                         textInputAction: TextInputAction.done,
                         style: TextStyle(
                           fontSize: 16,
@@ -170,35 +143,39 @@ class _Login_AdminState extends State<Login_Admin> {
                     SizedBox(
                       height: 50,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                            child: MaterialButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,  
-                                    MaterialPageRoute(
-                                        builder: (context) => Beranda_Admin()));
-                              },
-                              padding: EdgeInsets.symmetric(vertical: 15),
-                              color: Color(0xffFFD700),
-                              elevation: 0,
-                              child: Text(
-                                "MASUK",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xff000000),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                     RoundedButton(
+                btnText: 'LOG IN',
+                onBtnPressed: () => loginPressed(),
+              )
+                    // Row(
+                    //   children: [
+                    //     Expanded(
+                    //       child: Container(
+                    //         margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
+                    //         child: MaterialButton(
+                    //           onPressed: () {
+                    //             Navigator.push(
+                    //                 context,
+                    //                 MaterialPageRoute(
+                    //                     builder: (context) => Beranda_Admin()));
+                    //           },
+                    //           padding: EdgeInsets.symmetric(vertical: 15),
+                    //           color: Color(0xffFFD700),
+                    //           elevation: 0,
+                    //           child: Text(
+                    //             "MASUK",
+                    //             textAlign: TextAlign.center,
+                    //             style: TextStyle(
+                    //               color: Color(0xff000000),
+                    //               fontSize: 14,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),
