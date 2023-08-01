@@ -1,16 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:radja_coffe/test.dart';
-import 'package:radja_coffe/ui/admin/beranda_admin.dart';
-import 'package:radja_coffe/ui/kasir/beranda_kasir.dart';
 import 'package:radja_coffe/ui/login/login.dart';
-import 'package:radja_coffe/ui/pelayan/beranda_pelayan.dart';
-import 'package:radja_coffe/ui/pelayan/dashboard.dart';
-import 'package:radja_coffe/ui/pelayan/navigation_bar.dart';
-
-import 'ui/chef/beranda_chef.dart';
-import 'ui/kasir/pembayaran.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 import 'detail_pesanan.dart';
 
@@ -12,7 +11,7 @@ class Daftar_Menu extends StatefulWidget {
 }
 
 class _Daftar_MenuState extends State<Daftar_Menu> {
-  TextEditingController _textEditingController = TextEditingController();
+  // TextEditingController _textEditingController = TextEditingController();
 
   List freshList = [
     {
@@ -58,6 +57,8 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
       child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
+            title: Text("Daftar Menu", style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold, color: Colors.black),),
+            centerTitle: true,
             // leading: IconButton(
             //     onPressed: () {
             //       Navigator.pop(context);

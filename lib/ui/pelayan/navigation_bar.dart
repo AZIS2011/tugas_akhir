@@ -4,6 +4,7 @@ import 'package:radja_coffe/ui/pelayan/beranda_pelayan.dart';
 import 'package:radja_coffe/ui/pelayan/daftar_menu.dart';
 import 'package:radja_coffe/ui/pelayan/dashboard.dart';
 import 'package:radja_coffe/ui/pelayan/pesanan.dart';
+import 'package:radja_coffe/ui/pelayan/pilihan_menu.dart';
 
 class NavBarPage extends StatefulWidget {
   final int? initTab;
@@ -29,7 +30,7 @@ class _NavBarPageState extends State<NavBarPage> {
   }
 
   late bool _isloading;
-  final _widgetOptions = [Dashboard(), Daftar_Menu(), Pesanan()];
+  final _widgetOptions = [Dashboard(), Pilihan_Menu(), Pesanan()];
 
   @override
   Widget build(BuildContext context) {

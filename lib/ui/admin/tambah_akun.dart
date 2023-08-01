@@ -54,7 +54,7 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-           backgroundColor: Color(0xffFFD700),
+          backgroundColor: Color(0xffFFD700),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Color(0xff141414)),
             onPressed: () {

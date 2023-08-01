@@ -42,11 +42,20 @@ class _Pilihan_MenuState extends State<Pilihan_Menu> {
               ),
               Divider(),
               ListTile(
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => NikePage()));
-                },
+                onTap: () {},
                 title: const Text(
                   'Minuman',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                onTap: () {},
+                title: const Text(
+                  'Jus',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,

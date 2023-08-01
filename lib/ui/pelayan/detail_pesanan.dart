@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class Detail_Pesanan extends StatefulWidget {
   const Detail_Pesanan({Key? key}) : super(key: key);
@@ -58,7 +57,7 @@ class _Detail_PesananState extends State<Detail_Pesanan> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back, color: Colors.yellow),
+            icon: Icon(Icons.arrow_back, color: Colors.white, textDirection: TextDirection.ltr),
           ),
         ),
         body: Column(
@@ -155,7 +154,7 @@ class _Detail_PesananState extends State<Detail_Pesanan> {
                       ],
                     ),
                     SizedBox(
-                      height: 200,
+                      height: 210,
                     ),
                     SizedBox(height: 52),
                     Row(
