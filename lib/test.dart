@@ -12,7 +12,7 @@ class Testing extends StatefulWidget {
 }
 
 class _TestingState extends State<Testing> {
-  final String url = 'http://127.0.0.1:8000/api/products';
+  final String url = 'http://10.0.2.2:8000/api//products';
 
   Future getProducts() async {
     var response = await http.get(Uri.parse(url));
@@ -33,7 +33,31 @@ class _TestingState extends State<Testing> {
               return ListView.builder(
                   itemCount: snapshot.data['data'].length,
                   itemBuilder: (context, index) {
-                    return Text(snapshot.data['data'][index]['name']);
+                    return Container(
+                      height: 180,
+                      child: Card(
+                        elevation: 6,
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(2),
+                              height: 120,
+                              width: 120,
+                              child: Image.network(
+                                  snapshot.data['data'][index]['image_url']),
+                            ),
+                            Column(
+                              children: [
+                                Text(snapshot.data['data'][index]['name']),
+                                
+                              ],
+                            ),
+                            Text(snapshot.data['data'][index]
+                                    ['price']),
+                          ],
+                        ),
+                      ),
+                    );
                   });
             } else {
               return Text('data error');

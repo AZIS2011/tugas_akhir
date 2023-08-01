@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:radja_coffe/test.dart';
 import 'package:radja_coffe/ui/login/login.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Testing(),
     );
   }
 }
@@ -42,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
     startSplashScreen();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 4),
     );
     animationController!.addListener(() {
       setState(() {});
