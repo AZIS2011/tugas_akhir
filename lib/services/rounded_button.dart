@@ -11,7 +11,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 5,
-      color: Colors.black,
+         color: Color(0xffFFD700),
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         onPressed: () {

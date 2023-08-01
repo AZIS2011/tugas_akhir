@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:radja_coffe/Screens/register_screen.dart';
 import 'package:radja_coffe/ui/login/login.dart';
 
 void main() {

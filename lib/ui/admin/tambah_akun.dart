@@ -46,9 +46,9 @@ class _Tambah_AkunState extends State<Tambah_Akun> {
     }
   }
 
-  bool _value1 = false;
-  bool _value2 = false;
-  bool _value3 = false;
+  // bool _value1 = false;
+  // bool _value2 = false;
+  // bool _value3 = false;
   bool isHiddenPassword = true;
   @override
   Widget build(BuildContext context) {

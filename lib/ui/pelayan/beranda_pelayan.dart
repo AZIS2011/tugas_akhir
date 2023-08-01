@@ -64,11 +64,6 @@ class _Beranda_PelayanState extends State<Beranda_Pelayan> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // leading: IconButton(
-        //     onPressed: () {
-        //       Navigator.pop(context);
-        //     },
-        //     icon: Icon(Icons.arrow_back, color: Color(0xff52B69A))),
         elevation: 0,
         backgroundColor: Colors.white,
         title: Container(

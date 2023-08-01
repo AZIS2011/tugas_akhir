@@ -6,8 +6,9 @@ import 'package:radja_coffe/services/auth_services.dart';
 import 'package:radja_coffe/ui/admin/beranda_admin.dart';
 import 'package:http/http.dart' as http;
 
-import '../../Screens/rounded_button.dart';
+
 import '../../services/globals.dart';
+import '../../services/rounded_button.dart';
 
 class Login_Admin extends StatefulWidget {
   const Login_Admin({Key? key}) : super(key: key);
@@ -118,7 +119,6 @@ class _Login_AdminState extends State<Login_Admin> {
                         controller: password,
                         obscureText: isHiddenPassword,
                         keyboardType: TextInputType.text,
-                      
                         textInputAction: TextInputAction.done,
                         style: TextStyle(
                           fontSize: 16,
@@ -143,39 +143,11 @@ class _Login_AdminState extends State<Login_Admin> {
                     SizedBox(
                       height: 50,
                     ),
-                     RoundedButton(
-                btnText: 'LOG IN',
-                onBtnPressed: () => loginPressed(),
-              )
-                    // Row(
-                    //   children: [
-                    //     Expanded(
-                    //       child: Container(
-                    //         margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                    //         child: MaterialButton(
-                    //           onPressed: () {
-                    //             Navigator.push(
-                    //                 context,
-                    //                 MaterialPageRoute(
-                    //                     builder: (context) => Beranda_Admin()));
-                    //           },
-                    //           padding: EdgeInsets.symmetric(vertical: 15),
-                    //           color: Color(0xffFFD700),
-                    //           elevation: 0,
-                    //           child: Text(
-                    //             "MASUK",
-                    //             textAlign: TextAlign.center,
-                    //             style: TextStyle(
-                    //               color: Color(0xff000000),
-                    //               fontSize: 14,
-                    //               fontWeight: FontWeight.bold,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
+                    RoundedButton(
+                      btnText: 'LOGIN',
+                      onBtnPressed: () => loginPressed(),
+                    ),
+                 
                   ],
                 ),
               ),
