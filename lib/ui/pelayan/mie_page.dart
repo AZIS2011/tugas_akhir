@@ -59,10 +59,10 @@ class _MiePageState extends State<MiePage> {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Detail_Pesanan()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => Detail_Pesanan()));
                         },
                         child: Stack(
                           clipBehavior: Clip.none,

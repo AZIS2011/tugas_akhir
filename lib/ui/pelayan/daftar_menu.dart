@@ -132,11 +132,11 @@ class _Daftar_MenuState extends State<Daftar_Menu> {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                Detail_Pesanan()));
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             Detail_Pesanan()));
                                   },
                                   child: Container(
                                     padding: EdgeInsets.only(left: 10),
