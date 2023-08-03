@@ -3,6 +3,7 @@ import 'package:radja_coffe/ui/pelayan/coffe_page.dart';
 import 'package:radja_coffe/ui/pelayan/laporan_pelayan.dart';
 import 'package:radja_coffe/ui/pelayan/mie_page.dart';
 import 'package:radja_coffe/ui/pelayan/pesanan.dart';
+import 'package:radja_coffe/ui/pelayan/pilihan_menu.dart';
 
 import 'daftar_menu.dart';
 
@@ -27,54 +28,54 @@ class _DashboardState extends State<Dashboard> {
               appBar: AppBar(
                 flexibleSpace: Container(
                   color: Colors.white,
-                  height: 250,
+                  height: 200,
                   child: Column(
                     children: [
                       SizedBox(
                         height: 30,
                       ),
-                      Container(
-                        child: TextField(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Daftar_Menu()));
-                          },
-                          controller: _textEditingController,
-                          autofocus: false,
-                          keyboardType: TextInputType.name,
-                          textInputAction: TextInputAction.next,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                      // Container(
+                      //   child: TextField(
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => Pilihan_Menu()));
+                      //     },
+                      //     controller: _textEditingController,
+                      //     autofocus: false,
+                      //     keyboardType: TextInputType.name,
+                      //     textInputAction: TextInputAction.next,
+                      //     decoration: InputDecoration(
+                      //       border: OutlineInputBorder(
+                      //         borderRadius: BorderRadius.circular(20),
+                      //       ),
 
-                            //enabledBorder: InputBorder.none,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(
-                                color: Color(0xffFFD700),
-                                width: 2,
-                              ),
-                            ),
-                            contentPadding: EdgeInsets.fromLTRB(30, 15, 30, 15),
-                            hintText: 'Cari Makanan, Minuman, Jus',
-                            hintStyle: TextStyle(
-                              fontSize: 10,
-                            ),
-                            suffixIcon:
-                                Image.asset('assets/images/pilihan.png'),
-                            prefixIcon: Icon(
-                              Icons.search,
-                              color: Colors.grey,
-                              size: 20,
-                            ),
-                          ),
-                        ),
-                      ),
+                      //       //enabledBorder: InputBorder.none,
+                      //       focusedBorder: OutlineInputBorder(
+                      //         borderRadius: BorderRadius.all(
+                      //           Radius.circular(20),
+                      //         ),
+                      //         borderSide: BorderSide(
+                      //           color: Color(0xffFFD700),
+                      //           width: 2,
+                      //         ),
+                      //       ),
+                      //       contentPadding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+                      //       hintText: 'Cari Makanan, Minuman, Jus',
+                      //       hintStyle: TextStyle(
+                      //         fontSize: 10,
+                      //       ),
+                      //       suffixIcon:
+                      //           Image.asset('assets/images/pilihan.png'),
+                      //       prefixIcon: Icon(
+                      //         Icons.search,
+                      //         color: Colors.grey,
+                      //         size: 20,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
                         margin: EdgeInsets.all(20),
                         decoration: BoxDecoration(
@@ -109,7 +110,7 @@ class _DashboardState extends State<Dashboard> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Daftar_Menu()));
+                                                        Pilihan_Menu()));
                                           },
                                           child: Column(
                                             children: [
@@ -129,7 +130,12 @@ class _DashboardState extends State<Dashboard> {
                                               SizedBox(
                                                 height: 4,
                                               ),
-                                              Text('Daftar Menu'),
+                                              Text(
+                                                'Daftar Menu',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -159,7 +165,12 @@ class _DashboardState extends State<Dashboard> {
                                               SizedBox(
                                                 height: 4,
                                               ),
-                                              Text('Pesanan'),
+                                              Text(
+                                                'Pesanan',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -179,7 +190,11 @@ class _DashboardState extends State<Dashboard> {
                                             SizedBox(
                                               height: 4,
                                             ),
-                                            Text('Status'),
+                                            Text(
+                                              'Status',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ],
                                         ),
                                         GestureDetector(
@@ -206,7 +221,12 @@ class _DashboardState extends State<Dashboard> {
                                               SizedBox(
                                                 height: 4,
                                               ),
-                                              Text('Laporan'),
+                                              Text(
+                                                'Laporan',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -228,6 +248,7 @@ class _DashboardState extends State<Dashboard> {
                     // isScrollable: true,
                     tabs: <Widget>[
                       Tab(
+                        
                         text: "Coffe",
                       ),
                       Tab(
@@ -253,7 +274,7 @@ class _DashboardState extends State<Dashboard> {
                       borderRadius: BorderRadius.circular(0),
                     ),
                     labelStyle: TextStyle(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Montserrat",
                     ),
@@ -275,13 +296,9 @@ class _DashboardState extends State<Dashboard> {
               body: TabBarView(
                 children: [
                   CoffePage(),
-                  Container(
-                    color: Colors.black,
-                  ),
-                  MiePage(),
-                  Container(
-                    color: Colors.blue,
-                  ),
+                  CoffePage(),
+                  CoffePage(),
+                  CoffePage(),
                 ],
               ),
             ),

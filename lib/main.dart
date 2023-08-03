@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:radja_coffe/test.dart';
 import 'package:radja_coffe/ui/login/login.dart';
+import 'package:radja_coffe/ui/pelayan/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Testing(),
+      home: NavBarPage(),
     );
   }
 }

@@ -14,12 +14,16 @@ class _Pilihan_MenuState extends State<Pilihan_Menu> {
       data: ThemeData(fontFamily: "Montserrat"),
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(icon: Icon(Icons.arrow_back, color: Colors.black, ), onPressed: (){
+            Navigator.pop(context);
+          },),
           elevation: 0,
           backgroundColor: Colors.yellow,
           centerTitle: true,
           title: Text(
             'PILIHAN KATEGORU',
             style: TextStyle(
+              color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
